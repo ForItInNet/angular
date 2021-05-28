@@ -2,6 +2,7 @@
   "name": "anf-first",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -11,6 +12,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^12.0.2",
+    "@angular/compiler-cli": "^11.2.14",
     "@angular/animations": "~11.2.6",
     "@angular/common": "~11.2.6",
     "@angular/compiler": "~11.2.6",
@@ -26,8 +29,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.5",
-    "@angular/cli": "~11.2.5",
-    "@angular/compiler-cli": "~11.2.6",
+    "@angular/cli": "^12.0.2",
+    "@angular/compiler-cli": "^11.2.14",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
@@ -42,5 +45,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.5"
+  },
+  "engines": {
+    "node": "12.18.3",
+    "npm": "7.15.0"
   }
 }
