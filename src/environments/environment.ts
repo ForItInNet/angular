@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080',
+  apiBaseUrl: 'https://for-it-in-net-server.herokuapp.com/',
   authenticationCookieName: 'X-Authentication-Token',
   csrf: 'XSRF-TOKEN',
 };
