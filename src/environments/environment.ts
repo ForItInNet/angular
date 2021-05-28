@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   apiBaseUrl: 'https://for-it-in-net-server.herokuapp.com/',
   authenticationCookieName: 'X-Authentication-Token',
   csrf: 'XSRF-TOKEN',
