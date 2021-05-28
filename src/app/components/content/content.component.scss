@@ -1,0 +1,22 @@
+$header_height: 40px;
+
+.details__block, .table__navigation, .button, .option__search, .header,
+.user__about, .user__header, .context__menu, .settings__section{
+  background-color: #fafafa;
+  box-shadow: 1px 3px 8px rgba(179, 179, 179, 0.6);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.header{
+  border-radius: 0;
+
+  .header__row{
+    height: $header_height;
+  }
+}
+
+.component__main{
+  padding-top: $header_height;
+}
+

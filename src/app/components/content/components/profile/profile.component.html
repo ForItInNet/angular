@@ -1,0 +1,67 @@
+<div class="user__row">
+<div class="user__header">
+  <img src="./static/images/profile/header.jpg" alt="" class="header__background">
+  <button class="header__button">
+    Змінити шпалеру
+  </button>
+</div>
+  <div class="container">
+    <div class="user__about">
+      <div class="about__user-info">
+        <ul class="user__info">
+          <li class="info">
+            Дата реєстрації: 19.04.2021
+          </li>
+          <li class="info">
+            Дата народження: 19.04.2001
+          </li>
+          <li class="info">
+            Електронна адреса: myhailo.dmytrash@gamil.com
+          </li>
+        </ul>
+
+        <button *ngIf="!currentUser" (click)="clickFollow()" class="follow">
+          Підписатись
+        </button>
+      </div>
+      <div class="about__user">
+        <div class="user-img" (mouseover)="imgHover(changeImg)" (mouseout)="imgBlur(changeImg)">
+          <img src="{{user?.userImg}}" alt="user_img" class="img">
+          <div #changeImg class="user-img__change">
+            <input type="file" name="file" #file (change)="setImg(file)">
+          </div>
+
+        </div>
+        <span class="user-username">
+          {{user?.name}} {{user?.surname}}
+        </span>
+      </div>
+      <div class="about__user-online">
+      </div>
+    </div>
+
+    <div class="user__content">
+      <ul class="context__menu">
+        <li class="menu__item">
+          <a (click)="section = 'BLOG'" routerLinkActive="item__button-active" class="item__button">Блог</a>
+        </li>
+        <li class="menu__item">
+          <a (click)="section = 'WORKS'" routerLinkActive="item__button-active" class="item__button">Портфоліо</a>
+        </li>
+        <li class="menu__item">
+          <a (click)="section = 'ARTICLES'" routerLinkActive="item__button-active" class="item__button">Статті</a>
+        </li>
+        <li class="menu__item" *ngIf="currentUser">
+          <a (click)="section = 'SETTINGS'" routerLinkActive="item__button-active" class="item__button">Налаштування</a>
+        </li>
+      </ul>
+    </div>
+    <app-blog *ngIf="section == 'BLOG'"></app-blog>
+    <app-profile-works *ngIf="section == 'WORKS'"></app-profile-works>
+    <app-profile-articles *ngIf="section == 'ARTICLES'"></app-profile-articles>
+    <app-user-settings *ngIf="section == 'SETTINGS' && currentUser"></app-user-settings>
+<!--    <router-outlet>-->
+
+<!--    </router-outlet>-->
+  </div>
+</div>

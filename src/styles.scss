@@ -1,0 +1,57 @@
+@import "./static/scss/normalize";
+@import "./static/scss/mixin";
+
+@include font("Roboto-Light", "Roboto-Light", "400", "normal");
+@include font("Roboto-Bold", "Roboto-Bold", "400", "normal");
+@include font("Roboto-Medium", "Roboto-Medium", "400", "normal");
+@include font("Roboto-Regular", "Roboto-Regular", "400", "normal");
+
+$default_font: "Roboto-Regular";
+$default_fonts_size: 16px;
+$default_fonts_color: #000;
+
+$default_bg: rgb(250, 250, 250);
+$container_width: 1280px;
+$default_padding: 20px;
+
+body{
+  font-family: $default_font;
+  background-color: $default_bg;
+  color: $default_fonts_color;
+  font-size: $default_fonts_size;
+  overflow-x: hidden;
+
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  //user-select: none;
+}
+
+app-root{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container{
+  max-width: $container_width + 2 * $default_padding;
+  width: 100%;
+  height: 100%;
+  padding: 0 $default_padding;
+  margin: 0 auto;
+}
+
+p{
+  text-indent: 2em;
+  text-align: justify;
+  font-size: 16px;
+}
+
+app-authentication{
+  display: flex;
+  height: 100%;
+  background-image: url(/static/images/authentication/fon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

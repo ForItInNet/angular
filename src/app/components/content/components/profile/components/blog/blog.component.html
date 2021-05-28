@@ -1,0 +1,89 @@
+<div class="user__blog">
+  <app-pop-up></app-pop-up>
+  <div class="blog__details">
+    <div class="details__block">
+      <h3 class="block__title">
+        Статистика
+      </h3>
+      <ul class="block__statistics">
+        <li class="li statistics__statistic">
+          <span class="statistic__name">SomeName</span>
+          <span class="statistic__value">SomeValue</span>
+        </li>
+        <li class="li statistics__statistic">
+          <span class="statistic__name">SomeName</span>
+          <span class="statistic__value">SomeValue</span>
+        </li>
+        <li class="li statistics__statistic">
+          <span class="statistic__name">SomeName</span>
+          <span class="statistic__value">SomeValue</span>
+        </li>
+      </ul>
+    </div>
+    <div class="details__block">
+      <div class="block__header">
+        <h3 class="header__title">Підписки</h3>
+        <span class="header__number">{{parent.user?.followings.length}} користувачів</span>
+      </div>
+      <ul class="block__users">
+        <li class="users__user" *ngFor="let following of parent.user?.followings">
+          <a [routerLink]="['/user/' + following.entityToken]" class="user-link">
+            <div class="user__img">
+              <img src="{{following.userImg}}" alt="userImg" class="img">
+            </div>
+            <span class="user__name">{{following.name}} {{following.surname}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="details__block">
+      <div class="block__header">
+        <h3 class="header__title">Читачі</h3>
+        <span class="header__number">{{parent.user?.followers.length}} користувачів</span>
+      </div>
+      <ul class="block__users">
+        <li class="users__user" *ngFor="let follower of parent.user?.followers">
+          <a [routerLink]="['/user/' + follower.entityToken]" class="user-link">
+            <div class="user__img">
+              <img src="{{follower.userImg}}" alt="userImg" class="img">
+            </div>
+            <span class="user__name">{{follower.name}} {{follower.surname}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="blog__table">
+    <nav class="table__navigation">
+      <ul class="navigation__menu">
+        <li class="menu__item">
+          <button #allItems (click)="changeWritingForView(allItems)" class="item__link" name="ALL">Все</button>
+        </li>
+        <li class="menu__item">
+          <button #postItems (click)="changeWritingForView(postItems)" class="item__link" name="POST">Пости</button>
+        </li>
+        <li class="menu__item">
+          <button #articleItems (click)="changeWritingForView(articleItems)" class="item__link" name="ARTICLE">Статті</button>
+        </li>
+        <li class="menu__item">
+          <button #saveItems (click)="changeWritingForView(saveItems)" class="item__link" name="SAVED">Збережене</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="table__option">
+      <div class="option__button">
+        <button class="button">Додати статтю</button>
+        <button class="button" (click)="addPost()">Додати пост</button>
+      </div>
+      <div class="option__search">
+        <input #search (input)="onSearch(search.value)" type="text" class="search" placeholder="Пошук...">
+      </div>
+    </div>
+    <div class="table__content">
+
+        <app-blog-writing *ngFor="let writing of writingsToShow" [writing]="writing">
+
+      </app-blog-writing>
+    </div>
+  </div>
+</div>

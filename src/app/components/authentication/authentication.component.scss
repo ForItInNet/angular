@@ -1,0 +1,145 @@
+.authentication{
+  position: relative;
+  margin: auto auto;
+  height: 300px;
+  width: 500px;
+  box-shadow: 3px 3px 10px #c5c5c5;
+
+  background-image: url(/static/images/authentication/block-fon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .authentication__block-form{
+    position: absolute;
+    box-shadow: 0 0 10px #d7d7d7;
+    border-bottom: 1px solid #f66;
+    background-color: #f8f8f8;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 15px;
+  }
+}
+
+.title{
+  font-size: 20px;
+}
+
+.authorization, .registration, .confirm{
+  text-align: center;
+  max-width: 215px;
+
+  .input{
+    padding: 5px 10px;
+    width: 200px;
+    background-color: #ffffff00;
+    border-bottom: 1px solid #adadad;
+    transition: 0.3s;
+    display: block;
+  }
+}
+
+.authorization, .registration{
+
+  .form__input-block{
+    position: relative;
+    margin-top: 25px;
+
+    .input-label{
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      transition: 0.3s;
+    }
+
+    .input-label{
+      font-size: 15px;
+      color: #7e7e7e;
+    }
+  }
+
+  .active{
+    .input-label{
+      position: absolute;
+      top: -10px;
+      left: 0;
+      font-size: 13px;
+      color: #8d8d8d;
+    }
+  }
+
+  .form__button{
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .redirect{
+    font-size: 14px;
+  }
+
+  .redirect{
+    margin-top: 15px;
+    display: block;
+    color: #8a8a8a;
+  }
+}
+
+.registration{
+  .form__button{
+    margin-top: 25px;
+  }
+}
+
+.authorization{
+  .form__remember-me-block{
+    margin-top: 20px;
+  }
+
+  .remember-me{
+    transform: translate(0, 25%);
+    margin-left: 10px;
+  }
+
+  .remember-me__label{
+    font-size: 14px;
+  }
+}
+
+.confirm{
+
+  .confirm__hint{
+    text-align: left;
+    display: block;
+    color: #6e6e6e;
+    margin-top: 20px;
+  }
+
+  .confirm__form{
+
+    .form__code{
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .input{
+      height: 40px;
+      width: 40px;
+      font-size: 24px;
+      color: #727272;
+      text-align: center;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type=number] {
+        -moz-appearance:textfield;
+      }
+    }
+  }
+}
+

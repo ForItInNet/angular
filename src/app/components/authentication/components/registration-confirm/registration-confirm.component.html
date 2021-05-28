@@ -1,0 +1,14 @@
+<div class="confirm">
+  <h1 class="title">Підтвердження електронної адреси</h1>
+
+  <form [formGroup]="confirmRegistration" class="confirm__form">
+    <fieldset class="form__code" formGroupName="code">
+      <input class="input" #cellOne (input)="onKeyUp(cellOne)" type="number" name="cellOne" id="cellOne" formControlName="cellOne">
+      <input class="input" #cellTwo (input)="onKeyUp(cellTwo)" type="number" name="cellTwo" id="cellTwo" formControlName="cellTwo">
+      <input class="input" #cellThree (input)="onKeyUp(cellThree)" type="number" name="cellThree" id="cellThree" formControlName="cellThree">
+      <input class="input" #cellFour (input)="onKeyUp(cellFour)" type="number" name="cellFour" id="cellFour" formControlName="cellFour">
+    </fieldset>
+    <input class="input" type="hidden" name="hash" id="hash" formControlName="hash">
+  </form>
+  <span class="confirm__hint">Вкажіть код, який надійшов на вашу електронну адресу.</span>
+</div>

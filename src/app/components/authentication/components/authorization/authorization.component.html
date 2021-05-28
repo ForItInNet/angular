@@ -1,0 +1,19 @@
+<div class="authorization">
+  <h1 class="title">Реєстрація</h1>
+  <form [formGroup]="form" (submit)="onSubmit()" class="form">
+    <div #usernameBlock class="form__input-block">
+      <label for="username" class="input-label">Введіть email:</label>
+      <input (focus)="onFocus(usernameBlock)" (blur)="onBlur(usernameBlock)" type="username" class="input" id="username" name="email" formControlName="username">
+    </div>
+    <div #passwordBlock class="form__input-block">
+      <label for="password" class="input-label">Введіть пароль:</label>
+      <input (focus)="onFocus(passwordBlock)" (blur)="onBlur(passwordBlock)" type="password" class="input" id="password" name="password" formControlName="password">
+    </div>
+    <div class="form__remember-me-block">
+      <label for="remember-me" class="remember-me__label">Запам'ятати мене</label>
+      <input #rememberMe (click)="onRememberMe(rememberMe)" type="checkbox" value="off" class="remember-me" id="remember-me" name="remember-me" formControlName="remember-me">
+    </div>
+    <button type="submit" class="form__button">Увійти</button>
+  </form>
+  <a [routerLink]="['/registration']" class="redirect">Не маєте акаунту?</a>
+</div>

@@ -1,0 +1,67 @@
+<section class="settings__section">
+  <div class="section__header">
+    <h3 class="header__title">
+      Дані аккаунту
+    </h3>
+  </div>
+  <div class="section__content">
+
+  </div>
+  <div class="section__footer">
+    <button class="footer__button">
+      Зберегти
+    </button>
+  </div>
+</section>
+<section class="settings__section">
+  <div class="section__header">
+    <h3 class="header__title">
+      Налаштування приватності
+    </h3>
+  </div>
+  <div class="section__content">
+
+  </div>
+  <div class="section__footer">
+    <button class="footer__button">
+      Зберегти
+    </button>
+  </div>
+</section>
+<section class="settings__section">
+  <div class="section__header">
+    <h3 class="header__title">
+      Налаштування безпеки
+    </h3>
+  </div>
+  <div class="section__content">
+    <h4 class="content__title">Автоматична авторизація</h4>
+    <table class="content__auto-login">
+      <th class="auto-login__title">
+        IP - адреса
+      </th>
+      <th class="auto-login__title">
+        Дата першого входження
+      </th>
+      <th class="auto-login__title">
+        Дата останього входження
+      </th>
+      <tr class="auto-login__field" *ngFor="let token of tokens">
+        <td class="field__item">
+          {{token.tokenRegisterIP}}
+        </td>
+        <td class="field__item">
+          {{token.lastSingInDate | date: 'HH:mm dd.MM.yyyy'}}
+        </td>
+        <td class="field__item">
+          {{token.lastSingInDate | date: 'HH:mm dd.MM.yyyy'}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="section__footer">
+    <button class="footer__button">
+      Зберегти
+    </button>
+  </div>
+</section>

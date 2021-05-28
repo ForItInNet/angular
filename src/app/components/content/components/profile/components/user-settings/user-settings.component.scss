@@ -1,0 +1,48 @@
+.settings__section{
+  padding: 10px;
+
+  .settings__section + &{
+    margin-top: 30px;
+  }
+
+  .section__header{
+    border-bottom: 1px solid #d4d4d4;
+    padding: 0 5px 10px 5px;
+    margin-bottom: 10px;
+    color: #696969;
+  }
+
+  .content__title{
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    color: #8d8d8d;
+
+    &::after{
+      content: '';
+      display: inline-block;
+      height: 1px;
+      width: 100%;
+      margin-left: 10px;
+      background-color: #cbcbcb;
+    }
+  }
+
+  .content__auto-login{
+    width: 100%;
+
+
+    .auto-login__field{
+      text-align: center;
+    }
+
+    .field__item{
+      padding: 10px;
+    }
+  }
+
+  .section__footer{
+    display: flex;
+    justify-content: flex-end;
+  }
+}

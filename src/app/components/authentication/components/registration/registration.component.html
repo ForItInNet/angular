@@ -1,0 +1,27 @@
+<div class="registration">
+  <h1 class="title">Реєстрація</h1>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div #nameBlock class="form__input-block">
+      <label for="name" class="input-label">Введіть ім'я:</label>
+      <input (focus)="onFocus(nameBlock)" (blur)="onBlur(nameBlock)" class="input" id="name" name="name" formControlName="name">
+    </div>
+    <div #surnameBlock class="form__input-block">
+      <label for="surname" class="input-label">Введіть фамілію:</label>
+      <input (focus)="onFocus(surnameBlock)" (blur)="onBlur(surnameBlock)" class="input" id="surname" name="surname" formControlName="surname">
+    </div>
+    <div #emailBlock class="form__input-block">
+      <label for="email" class="input-label">Введіть email:</label>
+      <input (focus)="onFocus(emailBlock)" (blur)="onBlur(emailBlock)" class="input" id="email" name="email" formControlName="email">
+    </div>
+    <div #passwordBlock class="form__input-block">
+      <label for="password" class="input-label">Введіть пароль:</label>
+      <input (focus)="onFocus(passwordBlock)" (blur)="onBlur(passwordBlock)" class="input" id="password" name="password" formControlName="password">
+    </div>
+    <div #repeatPasswordBlock class="form__input-block">
+      <label for="repeatPassword" class="input-label">Повторіть пароль:</label>
+      <input (focus)="onFocus(repeatPasswordBlock)" (blur)="onBlur(repeatPasswordBlock)" class="input" id="repeatPassword" name="repeatPassword" formControlName="password">
+    </div>
+    <button type="submit" class="form__button">Продовжити</button>
+  </form>
+  <a [routerLink]="['/authorization']" class="redirect">Маєте акаунт?</a>
+</div>
